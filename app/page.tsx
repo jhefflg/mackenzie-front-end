@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="px-16 grid lg:gap-2 lg:grid-cols-2">
+      <div className="px-16 grid lg:gap-2 lg:grid-cols-2 justify-center">
         {tail?.map((item, index) => (
             <Section
               key={index}
