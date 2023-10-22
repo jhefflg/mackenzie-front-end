@@ -1,113 +1,118 @@
-import Image from 'next/image'
+import { Section } from "@/app/components/Section";
+
+import { Title } from "@/app/components/Title";
+import { Nav } from "@/app/components/Nav";
 
 export default function Home() {
+  const [head, ...tail] = data;
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <main className="lg:px-3 flex flex-col lg:py-6">
+      <div className="h-[90rem] sm:h-[70rem] lg:h-[50rem] xl:h-auto">
+        <div className="flex flex-col bg-red-500 px-7 lg:rounded-3xl lg:px-20 lg:mb-16 mb-auto h-[44rem] xl:h-auto">
+          <Nav />
+          <div className="p-0 -mb-96 lg:-mb-16">
+            <div className="flex flex-row flex-wrap justify-center items-center mb-9 xl:mt-3">
+              <Title
+                title="nossa"
+                styleClass="uppercase text-white text-6xl lg:text-slate-950"
+              />
+              <Title
+                title="identidade"
+                styleClass="ml-2 text-white uppercase text-6xl"
+              />
+            </div>
+            <Section
+              isHeader={true}
+              src={head?.src}
+              title={
+                <div className="flex flex-wrap lg:hidden">
+                  <Title title="Mais de " styleClass="text-slate-950" />
+                  <Title title="150 anos" styleClass="mx-4 text-red-500" />
+                  <Title title="de história" styleClass="text-slate-950" />
+                </div>
+              }
+              textMobile={head?.text}
+              textDesktop={head?.text}
+              btn={
+                <button className="text-red-500 lg:text-white lg:border py-2 px-16 text-lg mt-3 uppercase font-semibold">
+                  {head?.buttonText}
+                </button>
+              }
+              classCustom="flex-col lg:flex-row lg:col-start-1 lg:col-end-3 lg:flex-row"
             />
-          </a>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="px-16 grid lg:gap-2 lg:grid-cols-2">
+        {tail?.map((item, index) => (
+            <Section
+              key={index}
+              src={item?.src}
+              title={
+                item?.id === 4 ? (
+                  <div className="flex">
+                    <Title title="Histórico do" styleClass="text-slate-950" />
+                    <Title title="SME" styleClass="ml-4 text-red-500" />
+                  </div>
+                ) : (
+                  item?.title
+                )
+              }
+              btn={
+                <button className="text-end text-red-500 font-semibold text-lg mt-3 uppercase">
+                  {item?.buttonText}
+                </button>
+              }
+              classCustom={item?.classCustom}
+              textDesktop={item?.textDesktop}
+              textMobile={item?.textMobile}
+            />
+        ))}
       </div>
     </main>
-  )
+  );
 }
+
+const data = [
+  {
+    id: 1,
+    title: "",
+    src: "/image000.png",
+    buttonText: "saiba mais",
+    text: "Com mais de 150 anos de história, o Mackenzie é uma instituição educacional pioneira, agente de inovações pedagógicas. Comprometimento com valores e princípios cristãos, o Instituto busca formar cidadãos capazes de discernir, realizar uma leitura do mundo e intervir na sociedade.",
+  },
+  {
+    aid: 2,
+    title: "",
+    src: "/image001.png",
+    classCustom: "flex-col lg:order-1",
+    textDesktop:
+      "O Sistema Mackenzie de Ensino trabalha para fornecer uma pedagogia cristã, com materiais e recursos didáticos, que conduza essa geração a gloria de Deus por meio de uma atuação biblicamente orientada, social e culturamente relevante.",
+    textMobile:
+      "Nós, o Sistema de ensino Mackenzie, somos líderes na oferta de uma proposta educaciuonal sustentada pela tradição. Com materiais didáticos e soluções didático-pedagógicas, atendemos mais de 400 escolas, incluindo unidades próprias e parceiras. Destacamos-mnos como o sistema de ensino cristão mais relevante academicamente no país, baseado em uma cosmovisão bíblica.",
+  },
+  {
+    id: 3,
+    title: "",
+    src: "/image002.png",
+    textDesktop:
+      "O Sistema Mackenzie de Ensino é lider na oferta de uma proposta educacional sustentada pela tradição cristã. Com materiais didáticos e soluções pedagógicas, atendemos mais de 400 escolas, incluindo unidades próprias e parceiras. Destacamos-nos como o primeiro sistema de ensino cristão e o mais relevante academicamente no país.",
+    textMobile:
+      "Nós, o Sistema de ensino Mackenzie, oferecemos uma proposta educacional abrangente, com materiais didádicos e soluções pedagógicas, atendendo a mais de escolas. Somos reconhecidos com o sistemade ensino cristão de maior relevância acadêmica do país, fundamentado em uma cosmovisão bíblica.",
+    classCustom: "flex-col lg:flex-col-reverse",
+  },
+
+  {
+    id: 4,
+    title: "Histórico do SME",
+    src: "/image003.png",
+    classCustom:
+      "flex-col lg:flex-row lg:col-start-1 lg:col-end-3 lg:flex-row-reverse lg:order-3",
+    buttonText: "saiba mais",
+    textDesktop:
+      "Desenvolvemos um modelo de predagógico alinhado com a a filosofia cristã e o entendimento de que todo conhecimento provém de Deus e é o ponto convergente de todo reciocínio.",
+    textMobile:
+      "Os sistemas de ensino Mackenzie traduzem os princípios esseciais de um ensino-aprendizagem de excelência em materiais didáticos e soluções pedagógicas para professores e alunos. Nosso Modelo Pedagógico se baseia em uma visão integrada dos conhecimentos, em um processo de ensino-aprendizagem interativo e significativo, e em uma metodologia reflexiva que promove a compreensão do ensino, realizado com personalização sem deixar de promover uma aprendizagem colaborativa à luz da cosmovisão cristã. Se você compartilha essa abordagem educacional, junte-se a nós nessa jornada!",
+  },
+];
